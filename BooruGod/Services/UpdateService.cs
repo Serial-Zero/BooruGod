@@ -92,11 +92,16 @@ namespace BooruGod.Services
                 }
                 
                 debugInfo.Add($"📄 Parsed UpdateInfo - Version: {updateInfo.Version}");
+                debugInfo.Add($"📄 Version string length: {updateInfo.Version?.Length ?? 0}");
+                debugInfo.Add($"📄 Version string is null: {updateInfo.Version == null}");
+                debugInfo.Add($"📄 Version string is empty: {string.IsNullOrEmpty(updateInfo.Version)}");
+                debugInfo.Add($"📄 Version string trimmed: '{updateInfo.Version?.Trim()}'");
                 
                 // Parse the new version
                 if (!Version.TryParse(updateInfo.Version, out var newVersion))
                 {
                     debugInfo.Add($"❌ Failed to parse version: {updateInfo.Version}");
+                    debugInfo.Add($"❌ Version string type: {updateInfo.Version?.GetType().Name ?? "null"}");
                     return (null, string.Join("\n", debugInfo));
                 }
                 
