@@ -1,7 +1,7 @@
 {
-  "version": "2.0.0",
-  "downloadUrl": "https://github.com/Serial-Zero/BooruGod/releases/download/v2.0.0/BooruGod.apk",
-  "releaseNotes": "Major version update for testing - this is a test release",
+  "version": "2.0.1",
+  "downloadUrl": "https://github.com/Serial-Zero/BooruGod/releases/download/v2.0.1/BooruGod.apk",
+  "releaseNotes": "Enhanced debugging with visible UI feedback - debug information now shows in popup dialogs",
   "mandatory": false,
   "minVersion": "1.0.0"
 }
