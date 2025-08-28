@@ -23,11 +23,13 @@ namespace BooruGod.Services
             {
                 // Get current app version
                 var currentVersion = Version.Parse(VersionTracking.CurrentVersion);
+                System.Diagnostics.Debug.WriteLine($"[UpdateService] Current app version: {currentVersion}");
                 
                 // Download version.json from GitHub
                 using var client = new HttpClient();
                 client.Timeout = TimeSpan.FromSeconds(10);
                 var json = await client.GetStringAsync(VERSION_URL);
+                System.Diagnostics.Debug.WriteLine($"[UpdateService] Downloaded version.json: {json}");
                 
                 var updateInfo = JsonSerializer.Deserialize<UpdateInfo>(json);
                 if (updateInfo == null) return null;
@@ -35,6 +37,9 @@ namespace BooruGod.Services
                 // Parse the new version
                 if (!Version.TryParse(updateInfo.Version, out var newVersion))
                     return null;
+                
+                System.Diagnostics.Debug.WriteLine($"[UpdateService] New version from GitHub: {newVersion}");
+                System.Diagnostics.Debug.WriteLine($"[UpdateService] Version comparison: {newVersion} > {currentVersion} = {newVersion > currentVersion}");
                 
                 // Check if update is available
                 if (newVersion > currentVersion)

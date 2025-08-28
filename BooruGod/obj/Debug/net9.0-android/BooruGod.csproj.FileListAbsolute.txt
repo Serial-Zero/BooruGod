@@ -6,10 +6,6 @@ C:\Users\gurag\source\repos\BooruGod\BooruGod\bin\Debug\net9.0-android\com.compa
 C:\Users\gurag\source\repos\BooruGod\BooruGod\bin\Debug\net9.0-android\com.companyname.boorugod-Signed.aab
 C:\Users\gurag\source\repos\BooruGod\BooruGod\bin\Debug\net9.0-android\com.companyname.boorugod-Signed.apk
 C:\Users\gurag\source\repos\BooruGod\BooruGod\bin\Debug\net9.0-android\com.companyname.boorugod-Signed.apk.idsig
-C:\Users\gurag\source\repos\BooruGod\BooruGod\bin\Debug\net9.0-android\Microsoft.Maui.Controls.HotReload.Forms.dll
-C:\Users\gurag\source\repos\BooruGod\BooruGod\bin\Debug\net9.0-android\Microsoft.VisualStudio.DesignTools.MobileTapContracts.dll
-C:\Users\gurag\source\repos\BooruGod\BooruGod\bin\Debug\net9.0-android\Microsoft.VisualStudio.DesignTools.TapContract.dll
-C:\Users\gurag\source\repos\BooruGod\BooruGod\bin\Debug\net9.0-android\Microsoft.VisualStudio.DesignTools.XamlTapContract.dll
 C:\Users\gurag\source\repos\BooruGod\BooruGod\obj\Debug\net9.0-android\.NETCoreApp,Version=v9.0.AssemblyAttributes.cs
 C:\Users\gurag\source\repos\BooruGod\BooruGod\obj\Debug\net9.0-android\build.props
 C:\Users\gurag\source\repos\BooruGod\BooruGod\obj\Debug\net9.0-android\adb.props
@@ -133,7 +129,6 @@ C:\Users\gurag\source\repos\BooruGod\BooruGod\obj\Debug\net9.0-android\BooruGod.
 C:\Users\gurag\source\repos\BooruGod\BooruGod\obj\Debug\net9.0-android\BooruGod.AssemblyInfo.cs
 C:\Users\gurag\source\repos\BooruGod\BooruGod\obj\Debug\net9.0-android\BooruGod.csproj.CoreCompileInputs.cache
 C:\Users\gurag\source\repos\BooruGod\BooruGod\obj\Debug\net9.0-android\XamlC.stamp
-C:\Users\gurag\source\repos\BooruGod\BooruGod\obj\Debug\net9.0-android\BooruGod.csproj.Up2Date
 C:\Users\gurag\source\repos\BooruGod\BooruGod\obj\Debug\net9.0-android\BooruGod.dll
 C:\Users\gurag\source\repos\BooruGod\BooruGod\obj\Debug\net9.0-android\BooruGod.pdb
 C:\Users\gurag\source\repos\BooruGod\BooruGod\obj\Debug\net9.0-android\BooruGod.genruntimeconfig.cache
@@ -181,7 +176,6 @@ C:\Users\gurag\source\repos\BooruGod\BooruGod\obj\Debug\net9.0-android\android\a
 C:\Users\gurag\source\repos\BooruGod\BooruGod\obj\Debug\net9.0-android\android\assets\x86_64\Microsoft.Extensions.Options.dll
 C:\Users\gurag\source\repos\BooruGod\BooruGod\obj\Debug\net9.0-android\android\assets\x86_64\Microsoft.Extensions.Primitives.dll
 C:\Users\gurag\source\repos\BooruGod\BooruGod\obj\Debug\net9.0-android\android\assets\x86_64\Microsoft.Maui.Controls.dll
-C:\Users\gurag\source\repos\BooruGod\BooruGod\obj\Debug\net9.0-android\android\assets\x86_64\Microsoft.Maui.Controls.HotReload.Forms.dll
 C:\Users\gurag\source\repos\BooruGod\BooruGod\obj\Debug\net9.0-android\android\assets\x86_64\Microsoft.Maui.Controls.pdb
 C:\Users\gurag\source\repos\BooruGod\BooruGod\obj\Debug\net9.0-android\android\assets\x86_64\Microsoft.Maui.Controls.Xaml.dll
 C:\Users\gurag\source\repos\BooruGod\BooruGod\obj\Debug\net9.0-android\android\assets\x86_64\Microsoft.Maui.Controls.Xaml.pdb
@@ -193,9 +187,6 @@ C:\Users\gurag\source\repos\BooruGod\BooruGod\obj\Debug\net9.0-android\android\a
 C:\Users\gurag\source\repos\BooruGod\BooruGod\obj\Debug\net9.0-android\android\assets\x86_64\Microsoft.Maui.pdb
 C:\Users\gurag\source\repos\BooruGod\BooruGod\obj\Debug\net9.0-android\android\assets\x86_64\Microsoft.VisualBasic.Core.dll
 C:\Users\gurag\source\repos\BooruGod\BooruGod\obj\Debug\net9.0-android\android\assets\x86_64\Microsoft.VisualBasic.dll
-C:\Users\gurag\source\repos\BooruGod\BooruGod\obj\Debug\net9.0-android\android\assets\x86_64\Microsoft.VisualStudio.DesignTools.MobileTapContracts.dll
-C:\Users\gurag\source\repos\BooruGod\BooruGod\obj\Debug\net9.0-android\android\assets\x86_64\Microsoft.VisualStudio.DesignTools.TapContract.dll
-C:\Users\gurag\source\repos\BooruGod\BooruGod\obj\Debug\net9.0-android\android\assets\x86_64\Microsoft.VisualStudio.DesignTools.XamlTapContract.dll
 C:\Users\gurag\source\repos\BooruGod\BooruGod\obj\Debug\net9.0-android\android\assets\x86_64\Microsoft.Win32.Primitives.dll
 C:\Users\gurag\source\repos\BooruGod\BooruGod\obj\Debug\net9.0-android\android\assets\x86_64\Microsoft.Win32.Registry.dll
 C:\Users\gurag\source\repos\BooruGod\BooruGod\obj\Debug\net9.0-android\android\assets\x86_64\Mono.Android.dll
@@ -950,3 +941,4 @@ C:\Users\gurag\source\repos\BooruGod\BooruGod\obj\Debug\net9.0-android\stamp\_Co
 C:\Users\gurag\source\repos\BooruGod\BooruGod\obj\Debug\net9.0-android\stamp\_GenerateJavaStubs.stamp
 C:\Users\gurag\source\repos\BooruGod\BooruGod\obj\Debug\net9.0-android\stamp\_GeneratePackageManagerJava.stamp
 C:\Users\gurag\source\repos\BooruGod\BooruGod\obj\Debug\net9.0-android\stamp\_ResolveLibraryProjectImports.stamp
+C:\Users\gurag\source\repos\BooruGod\BooruGod\obj\Debug\net9.0-android\BooruGod.sourcelink.json

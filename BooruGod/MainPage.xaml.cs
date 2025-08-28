@@ -68,12 +68,16 @@ namespace BooruGod
         {
             try
             {
+                System.Diagnostics.Debug.WriteLine("[MainPage] Starting update check...");
                 var updateService = new UpdateService();
                 var updateInfo = await updateService.CheckForUpdates();
+                
+                System.Diagnostics.Debug.WriteLine($"[MainPage] Update check result: {(updateInfo != null ? $"Update available: {updateInfo.Version}" : "No update available")}");
                 
                 if (updateInfo != null)
                 {
                     var isMandatory = await updateService.IsUpdateMandatory(updateInfo);
+                    System.Diagnostics.Debug.WriteLine($"[MainPage] Update is mandatory: {isMandatory}");
                     await Navigation.PushAsync(new pages.UpdateDialog(updateInfo, isMandatory));
                 }
             }
