@@ -1,7 +1,7 @@
 {
-  "version": "2.0.2",
-  "downloadUrl": "https://github.com/Serial-Zero/BooruGod/releases/download/v2.0.2/BooruGod.apk",
-  "releaseNotes": "Added direct download to device - no more browser redirects! Downloads APK directly to your device and opens package installer automatically.",
+  "version": "2.0.3",
+  "downloadUrl": "https://github.com/Serial-Zero/BooruGod/releases/download/v2.0.3/BooruGod.apk",
+  "releaseNotes": "Simplified update process - now opens download URL directly in browser for easier installation.",
   "mandatory": false,
   "minVersion": "1.0.0"
 }

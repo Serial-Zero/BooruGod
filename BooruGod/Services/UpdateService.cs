@@ -206,13 +206,8 @@ namespace BooruGod.Services
         {
             try
             {
-                // Try direct download first
-                var downloadSuccess = await DownloadUpdateToDevice(downloadUrl);
-                if (!downloadSuccess)
-                {
-                    // Fallback to browser download
-                    await Launcher.OpenAsync(new Uri(downloadUrl));
-                }
+                // Open the download URL directly in the browser
+                await Launcher.OpenAsync(new Uri(downloadUrl));
             }
             catch (Exception ex)
             {

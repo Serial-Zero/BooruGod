@@ -35,53 +35,17 @@ public partial class UpdateDialog : ContentPage
         try
         {
             DownloadButton.IsEnabled = false;
-            DownloadButton.Text = "📥 Downloading...";
+            DownloadButton.Text = "🌐 Opening...";
             
-            // Show progress dialog
-            var progressDialog = await DisplayAlert(
-                "Downloading Update", 
-                "Downloading the update directly to your device...\n\nThis may take a few moments.", 
-                "OK", 
-                "Cancel"
-            );
+            // Open the download URL directly in the browser
+            await _updateService.OpenDownloadPage(_updateInfo.DownloadUrl);
             
-            if (!progressDialog)
-            {
-                DownloadButton.IsEnabled = true;
-                DownloadButton.Text = "📥 Download Update";
-                return;
-            }
-            
-            // Try direct download first
-            var downloadSuccess = await _updateService.DownloadUpdateToDevice(_updateInfo.DownloadUrl);
-            
-            if (downloadSuccess)
-            {
-                await DisplayAlert(
-                    "Download Complete", 
-                    "The update has been downloaded and the package installer should open automatically.\n\nIf it doesn't open, check your Downloads folder.", 
-                    "OK"
-                );
-                
-                // Close the dialog
-                await Navigation.PopAsync();
-            }
-            else
-            {
-                // Fallback to browser download
-                await DisplayAlert(
-                    "Direct Download Failed", 
-                    "Direct download failed. Opening browser download instead.", 
-                    "OK"
-                );
-                
-                await _updateService.OpenDownloadPage(_updateInfo.DownloadUrl);
-                await Navigation.PopAsync();
-            }
+            // Close the dialog
+            await Navigation.PopAsync();
         }
         catch (Exception ex)
         {
-            await DisplayAlert("Error", $"Failed to download update: {ex.Message}", "OK");
+            await DisplayAlert("Error", $"Failed to open download page: {ex.Message}", "OK");
             DownloadButton.IsEnabled = true;
             DownloadButton.Text = "📥 Download Update";
         }

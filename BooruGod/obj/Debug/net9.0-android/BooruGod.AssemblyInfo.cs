@@ -12,11 +12,11 @@ using System.Reflection;
 
 [assembly: System.Reflection.AssemblyCompanyAttribute("BooruGod")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
-[assembly: System.Reflection.AssemblyFileVersionAttribute("2.0.2.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("2.0.2+f946ba2399eac925b31c009c7b557b697ee0566d")]
+[assembly: System.Reflection.AssemblyFileVersionAttribute("2.0.3.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("2.0.3+a60c1a455b540261080642beee0d6a2c88e4c2ee")]
 [assembly: System.Reflection.AssemblyProductAttribute("BooruGod")]
 [assembly: System.Reflection.AssemblyTitleAttribute("BooruGod")]
-[assembly: System.Reflection.AssemblyVersionAttribute("2.0.2.0")]
+[assembly: System.Reflection.AssemblyVersionAttribute("2.0.3.0")]
 [assembly: System.Runtime.Versioning.TargetPlatformAttribute("Android35.0")]
 [assembly: System.Runtime.Versioning.SupportedOSPlatformAttribute("Android24.0")]
 
