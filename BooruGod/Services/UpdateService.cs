@@ -14,8 +14,8 @@ namespace BooruGod.Services
     public class UpdateService
     {
         // Update this URL to point to your GitHub repository
-        private const string VERSION_URL = "https://raw.githubusercontent.com/yourusername/BooruGod/main/version.json";
-        private const string GITHUB_RELEASES_URL = "https://github.com/yourusername/BooruGod/releases";
+        private const string VERSION_URL = "https://raw.githubusercontent.com/Serial-Zero/BooruGod/main/version.json";
+        private const string GITHUB_RELEASES_URL = "https://github.com/Serial-Zero/BooruGod/releases";
         
         public async Task<UpdateInfo?> CheckForUpdates()
         {

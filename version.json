@@ -1,6 +1,6 @@
 {
   "version": "1.0.0",
-  "downloadUrl": "https://github.com/yourusername/BooruGod/releases/download/v1.0.0/BooruGod.apk",
+  "downloadUrl": "https://github.com/Serial-Zero/BooruGod/releases/download/v1.0.0/BooruGod.apk",
   "releaseNotes": "Initial release with Rule34 browsing and video support",
   "mandatory": false,
   "minVersion": "1.0.0"
