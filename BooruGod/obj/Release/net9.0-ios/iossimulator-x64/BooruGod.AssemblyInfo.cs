@@ -13,11 +13,11 @@ using System.Reflection;
 
 [assembly: System.Reflection.AssemblyCompanyAttribute("BooruGod")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Release")]
-[assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0+07d6d27b2ed0deb74fc73d15cc257a51b7deeaff")]
+[assembly: System.Reflection.AssemblyFileVersionAttribute("2.0.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("2.0.0+1bec7c42ee3157485b8bc154a04ff5938c881fbb")]
 [assembly: System.Reflection.AssemblyProductAttribute("BooruGod")]
 [assembly: System.Reflection.AssemblyTitleAttribute("BooruGod")]
-[assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
+[assembly: System.Reflection.AssemblyVersionAttribute("2.0.0.0")]
 [assembly: System.Runtime.Versioning.TargetPlatformAttribute("iOS18.5")]
 [assembly: System.Runtime.Versioning.SupportedOSPlatformAttribute("iOS15.0")]
 

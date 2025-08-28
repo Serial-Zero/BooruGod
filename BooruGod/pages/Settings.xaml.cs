@@ -86,11 +86,26 @@ public partial class Settings : ContentPage
 		{
 			CheckUpdateButton.IsEnabled = false;
 			CheckUpdateButton.Text = "Checking...";
-			UpdateStatusLabel.Text = "Checking for updates...";
+			UpdateStatusLabel.Text = "Step 1: Checking permissions...";
 			UpdateStatusLabel.TextColor = Colors.Blue;
 
+			// Check network permission first
+			var permissionStatus = await CheckNetworkPermission();
+			if (!permissionStatus)
+			{
+				UpdateStatusLabel.Text = "Internet permission required for updates";
+				UpdateStatusLabel.TextColor = Colors.Red;
+				return;
+			}
+
+			UpdateStatusLabel.Text = "Step 2: Testing network connectivity...";
+			await Task.Delay(500); // Give user time to see the step
+
 			var updateService = new UpdateService();
-			var updateInfo = await updateService.CheckForUpdates();
+			UpdateStatusLabel.Text = "Step 3: Checking for updates...";
+			await Task.Delay(500);
+
+			var (updateInfo, debugInfo) = await updateService.CheckForUpdatesWithDebug();
 
 			if (updateInfo != null)
 			{
@@ -103,19 +118,71 @@ public partial class Settings : ContentPage
 			}
 			else
 			{
-				UpdateStatusLabel.Text = "No updates available";
-				UpdateStatusLabel.TextColor = Colors.Green;
+				UpdateStatusLabel.Text = "No updates available - See debug info below";
+				UpdateStatusLabel.TextColor = Colors.Orange;
+				
+				// Show debug information in a dialog
+				await DisplayAlert("Debug Information", debugInfo, "OK");
 			}
 		}
 		catch (Exception ex)
 		{
-			UpdateStatusLabel.Text = $"Error checking updates: {ex.Message}";
+			UpdateStatusLabel.Text = $"Error: {ex.Message}";
 			UpdateStatusLabel.TextColor = Colors.Red;
 		}
 		finally
 		{
 			CheckUpdateButton.IsEnabled = true;
 			CheckUpdateButton.Text = "Check for Updates";
+		}
+	}
+	
+	private async Task<bool> CheckNetworkPermission()
+	{
+		try
+		{
+			// For Android, internet permission is typically granted at install time
+			// Show a dialog to inform the user about internet access
+			var result = await DisplayAlert(
+				"Internet Access Required",
+				"This app needs internet access to check for updates. Please ensure you have an internet connection.",
+				"Continue",
+				"Cancel"
+			);
+			
+			return result;
+		}
+		catch (Exception ex)
+		{
+			System.Diagnostics.Debug.WriteLine($"[Settings] Error checking network permission: {ex.Message}");
+			return true; // Assume permission is available if check fails
+		}
+	}
+	
+	private async void OnTestVersionClicked(object? sender, EventArgs e)
+	{
+		try
+		{
+			TestVersionButton.IsEnabled = false;
+			TestVersionButton.Text = "Testing...";
+			UpdateStatusLabel.Text = "Testing version.json access...";
+			UpdateStatusLabel.TextColor = Colors.Blue;
+			
+			var updateService = new UpdateService();
+			var result = await updateService.TestVersionJsonAccess();
+			
+			UpdateStatusLabel.Text = result;
+			UpdateStatusLabel.TextColor = result.StartsWith("Success") ? Colors.Green : Colors.Red;
+		}
+		catch (Exception ex)
+		{
+			UpdateStatusLabel.Text = $"Test failed: {ex.Message}";
+			UpdateStatusLabel.TextColor = Colors.Red;
+		}
+		finally
+		{
+			TestVersionButton.IsEnabled = true;
+			TestVersionButton.Text = "Test Version.json Access";
 		}
 	}
 }

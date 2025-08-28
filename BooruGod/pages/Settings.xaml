@@ -76,6 +76,12 @@
                             HorizontalOptions="Fill"
                             Clicked="OnCheckUpdateClicked" />
                     
+                    <Button x:Name="TestVersionButton"
+                            Text="Test Version.json Access"
+                            HorizontalOptions="Fill"
+                            Clicked="OnTestVersionClicked"
+                            BackgroundColor="Orange" />
+                    
                     <Label x:Name="UpdateStatusLabel"
                            Text=""
                            HorizontalOptions="Center"
