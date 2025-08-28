@@ -406,7 +406,7 @@ target triple = "x86_64-unknown-linux-android21"
 		ptr @__compressedAssemblyData_76; uint8_t* data
 	}, ; 76: Xamarin.KotlinX.Serialization.Core.Jvm
 	%struct.CompressedAssemblyDescriptor {
-		i32 164864, ; uint32_t uncompressed_file_size
+		i32 174592, ; uint32_t uncompressed_file_size
 		i1 false, ; bool loaded
 		ptr @__compressedAssemblyData_77; uint8_t* data
 	}, ; 77: BooruGod
@@ -491,7 +491,7 @@ target triple = "x86_64-unknown-linux-android21"
 		ptr @__compressedAssemblyData_93; uint8_t* data
 	}, ; 93: System.Memory
 	%struct.CompressedAssemblyDescriptor {
-		i32 132608, ; uint32_t uncompressed_file_size
+		i32 133120, ; uint32_t uncompressed_file_size
 		i1 false, ; bool loaded
 		ptr @__compressedAssemblyData_94; uint8_t* data
 	}, ; 94: System.Net.Http
@@ -591,7 +591,7 @@ target triple = "x86_64-unknown-linux-android21"
 		ptr @__compressedAssemblyData_113; uint8_t* data
 	}, ; 113: System
 	%struct.CompressedAssemblyDescriptor {
-		i32 1889792, ; uint32_t uncompressed_file_size
+		i32 1890304, ; uint32_t uncompressed_file_size
 		i1 false, ; bool loaded
 		ptr @__compressedAssemblyData_114; uint8_t* data
 	}, ; 114: System.Private.CoreLib
@@ -689,7 +689,7 @@ target triple = "x86_64-unknown-linux-android21"
 @__compressedAssemblyData_74 = internal dso_local global [86016 x i8] zeroinitializer, align 16
 @__compressedAssemblyData_75 = internal dso_local global [18432 x i8] zeroinitializer, align 16
 @__compressedAssemblyData_76 = internal dso_local global [89600 x i8] zeroinitializer, align 16
-@__compressedAssemblyData_77 = internal dso_local global [164864 x i8] zeroinitializer, align 16
+@__compressedAssemblyData_77 = internal dso_local global [174592 x i8] zeroinitializer, align 16
 @__compressedAssemblyData_78 = internal dso_local global [24064 x i8] zeroinitializer, align 16
 @__compressedAssemblyData_79 = internal dso_local global [14848 x i8] zeroinitializer, align 16
 @__compressedAssemblyData_80 = internal dso_local global [9216 x i8] zeroinitializer, align 16
@@ -706,7 +706,7 @@ target triple = "x86_64-unknown-linux-android21"
 @__compressedAssemblyData_91 = internal dso_local global [353280 x i8] zeroinitializer, align 16
 @__compressedAssemblyData_92 = internal dso_local global [39424 x i8] zeroinitializer, align 16
 @__compressedAssemblyData_93 = internal dso_local global [16384 x i8] zeroinitializer, align 16
-@__compressedAssemblyData_94 = internal dso_local global [132608 x i8] zeroinitializer, align 16
+@__compressedAssemblyData_94 = internal dso_local global [133120 x i8] zeroinitializer, align 16
 @__compressedAssemblyData_95 = internal dso_local global [37376 x i8] zeroinitializer, align 16
 @__compressedAssemblyData_96 = internal dso_local global [7168 x i8] zeroinitializer, align 16
 @__compressedAssemblyData_97 = internal dso_local global [5120 x i8] zeroinitializer, align 16
@@ -726,7 +726,7 @@ target triple = "x86_64-unknown-linux-android21"
 @__compressedAssemblyData_111 = internal dso_local global [11264 x i8] zeroinitializer, align 16
 @__compressedAssemblyData_112 = internal dso_local global [5120 x i8] zeroinitializer, align 16
 @__compressedAssemblyData_113 = internal dso_local global [4608 x i8] zeroinitializer, align 16
-@__compressedAssemblyData_114 = internal dso_local global [1889792 x i8] zeroinitializer, align 16
+@__compressedAssemblyData_114 = internal dso_local global [1890304 x i8] zeroinitializer, align 16
 @__compressedAssemblyData_115 = internal dso_local global [166912 x i8] zeroinitializer, align 16
 @__compressedAssemblyData_116 = internal dso_local global [19008 x i8] zeroinitializer, align 16
 @__compressedAssemblyData_117 = internal dso_local global [1803776 x i8] zeroinitializer, align 16

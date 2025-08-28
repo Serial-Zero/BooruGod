@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("BooruGod")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Release")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0+eee87c94e11842d18acecc5e904179b4a1033ecf")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0+f8f4b0fe555b718554e0605648b9f97e743e1b0a")]
 [assembly: System.Reflection.AssemblyProductAttribute("BooruGod")]
 [assembly: System.Reflection.AssemblyTitleAttribute("BooruGod")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

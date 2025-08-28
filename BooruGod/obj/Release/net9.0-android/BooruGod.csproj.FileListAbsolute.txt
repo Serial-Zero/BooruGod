@@ -456,3 +456,4 @@ C:\Users\gurag\source\repos\BooruGod\BooruGod\obj\Release\net9.0-android\stamp\_
 C:\Users\gurag\source\repos\BooruGod\BooruGod\obj\Release\net9.0-android\stamp\_GeneratePackageManagerJava.stamp
 C:\Users\gurag\source\repos\BooruGod\BooruGod\obj\Release\net9.0-android\stamp\_ResolveLibraryProjectImports.stamp
 C:\Users\gurag\source\repos\BooruGod\BooruGod\obj\Release\net9.0-android\resizetizer\r\drawable\video.png
+C:\Users\gurag\source\repos\BooruGod\BooruGod\obj\Release\net9.0-android\BooruGod.sourcelink.json
