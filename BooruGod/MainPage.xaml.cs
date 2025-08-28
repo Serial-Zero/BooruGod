@@ -1,4 +1,6 @@
-﻿namespace BooruGod
+﻿using BooruGod.Services;
+
+namespace BooruGod
 {
     public partial class MainPage : ContentPage
     {
@@ -7,6 +9,7 @@
         public MainPage()
         {
             InitializeComponent();
+            CheckForUpdates();
         }
 
         private async void OnMenuClicked(object? sender, EventArgs e)
@@ -59,6 +62,26 @@
             );
             
             SidebarOverlay.IsVisible = false;
+        }
+
+        private async void CheckForUpdates()
+        {
+            try
+            {
+                var updateService = new UpdateService();
+                var updateInfo = await updateService.CheckForUpdates();
+                
+                if (updateInfo != null)
+                {
+                    var isMandatory = await updateService.IsUpdateMandatory(updateInfo);
+                    await Navigation.PushAsync(new pages.UpdateDialog(updateInfo, isMandatory));
+                }
+            }
+            catch (Exception ex)
+            {
+                // Silently handle update check errors
+                System.Diagnostics.Debug.WriteLine($"[MainPage] Update check failed: {ex.Message}");
+            }
         }
     }
 }
