@@ -251,7 +251,7 @@ target triple = "aarch64-unknown-linux-android21"
 		ptr @__compressedAssemblyData_45; uint8_t* data
 	}, ; 45: Microsoft.Maui
 	%struct.CompressedAssemblyDescriptor {
-		i32 52224, ; uint32_t uncompressed_file_size
+		i32 54784, ; uint32_t uncompressed_file_size
 		i1 false, ; bool loaded
 		ptr @__compressedAssemblyData_46; uint8_t* data
 	}, ; 46: Microsoft.Maui.Essentials
@@ -406,7 +406,7 @@ target triple = "aarch64-unknown-linux-android21"
 		ptr @__compressedAssemblyData_76; uint8_t* data
 	}, ; 76: Xamarin.KotlinX.Serialization.Core.Jvm
 	%struct.CompressedAssemblyDescriptor {
-		i32 174592, ; uint32_t uncompressed_file_size
+		i32 179712, ; uint32_t uncompressed_file_size
 		i1 false, ; bool loaded
 		ptr @__compressedAssemblyData_77; uint8_t* data
 	}, ; 77: BooruGod
@@ -491,7 +491,7 @@ target triple = "aarch64-unknown-linux-android21"
 		ptr @__compressedAssemblyData_93; uint8_t* data
 	}, ; 93: System.Memory
 	%struct.CompressedAssemblyDescriptor {
-		i32 133120, ; uint32_t uncompressed_file_size
+		i32 135168, ; uint32_t uncompressed_file_size
 		i1 false, ; bool loaded
 		ptr @__compressedAssemblyData_94; uint8_t* data
 	}, ; 94: System.Net.Http
@@ -591,7 +591,7 @@ target triple = "aarch64-unknown-linux-android21"
 		ptr @__compressedAssemblyData_113; uint8_t* data
 	}, ; 113: System
 	%struct.CompressedAssemblyDescriptor {
-		i32 1882112, ; uint32_t uncompressed_file_size
+		i32 1885184, ; uint32_t uncompressed_file_size
 		i1 false, ; bool loaded
 		ptr @__compressedAssemblyData_114; uint8_t* data
 	}, ; 114: System.Private.CoreLib
@@ -601,12 +601,12 @@ target triple = "aarch64-unknown-linux-android21"
 		ptr @__compressedAssemblyData_115; uint8_t* data
 	}, ; 115: Java.Interop
 	%struct.CompressedAssemblyDescriptor {
-		i32 18992, ; uint32_t uncompressed_file_size
+		i32 18984, ; uint32_t uncompressed_file_size
 		i1 false, ; bool loaded
 		ptr @__compressedAssemblyData_116; uint8_t* data
 	}, ; 116: Mono.Android.Runtime
 	%struct.CompressedAssemblyDescriptor {
-		i32 1803776, ; uint32_t uncompressed_file_size
+		i32 1807872, ; uint32_t uncompressed_file_size
 		i1 false, ; bool loaded
 		ptr @__compressedAssemblyData_117; uint8_t* data
 	} ; 117: Mono.Android
@@ -658,7 +658,7 @@ target triple = "aarch64-unknown-linux-android21"
 @__compressedAssemblyData_43 = internal dso_local global [1871152 x i8] zeroinitializer, align 1
 @__compressedAssemblyData_44 = internal dso_local global [128280 x i8] zeroinitializer, align 1
 @__compressedAssemblyData_45 = internal dso_local global [800048 x i8] zeroinitializer, align 1
-@__compressedAssemblyData_46 = internal dso_local global [52224 x i8] zeroinitializer, align 1
+@__compressedAssemblyData_46 = internal dso_local global [54784 x i8] zeroinitializer, align 1
 @__compressedAssemblyData_47 = internal dso_local global [207648 x i8] zeroinitializer, align 1
 @__compressedAssemblyData_48 = internal dso_local global [59392 x i8] zeroinitializer, align 1
 @__compressedAssemblyData_49 = internal dso_local global [515584 x i8] zeroinitializer, align 1
@@ -689,7 +689,7 @@ target triple = "aarch64-unknown-linux-android21"
 @__compressedAssemblyData_74 = internal dso_local global [86016 x i8] zeroinitializer, align 1
 @__compressedAssemblyData_75 = internal dso_local global [18432 x i8] zeroinitializer, align 1
 @__compressedAssemblyData_76 = internal dso_local global [89600 x i8] zeroinitializer, align 1
-@__compressedAssemblyData_77 = internal dso_local global [174592 x i8] zeroinitializer, align 1
+@__compressedAssemblyData_77 = internal dso_local global [179712 x i8] zeroinitializer, align 1
 @__compressedAssemblyData_78 = internal dso_local global [24064 x i8] zeroinitializer, align 1
 @__compressedAssemblyData_79 = internal dso_local global [14848 x i8] zeroinitializer, align 1
 @__compressedAssemblyData_80 = internal dso_local global [9216 x i8] zeroinitializer, align 1
@@ -706,7 +706,7 @@ target triple = "aarch64-unknown-linux-android21"
 @__compressedAssemblyData_91 = internal dso_local global [353280 x i8] zeroinitializer, align 1
 @__compressedAssemblyData_92 = internal dso_local global [39424 x i8] zeroinitializer, align 1
 @__compressedAssemblyData_93 = internal dso_local global [16384 x i8] zeroinitializer, align 1
-@__compressedAssemblyData_94 = internal dso_local global [133120 x i8] zeroinitializer, align 1
+@__compressedAssemblyData_94 = internal dso_local global [135168 x i8] zeroinitializer, align 1
 @__compressedAssemblyData_95 = internal dso_local global [37376 x i8] zeroinitializer, align 1
 @__compressedAssemblyData_96 = internal dso_local global [7168 x i8] zeroinitializer, align 1
 @__compressedAssemblyData_97 = internal dso_local global [5120 x i8] zeroinitializer, align 1
@@ -726,17 +726,17 @@ target triple = "aarch64-unknown-linux-android21"
 @__compressedAssemblyData_111 = internal dso_local global [11264 x i8] zeroinitializer, align 1
 @__compressedAssemblyData_112 = internal dso_local global [5120 x i8] zeroinitializer, align 1
 @__compressedAssemblyData_113 = internal dso_local global [4608 x i8] zeroinitializer, align 1
-@__compressedAssemblyData_114 = internal dso_local global [1882112 x i8] zeroinitializer, align 1
+@__compressedAssemblyData_114 = internal dso_local global [1885184 x i8] zeroinitializer, align 1
 @__compressedAssemblyData_115 = internal dso_local global [166912 x i8] zeroinitializer, align 1
-@__compressedAssemblyData_116 = internal dso_local global [18992 x i8] zeroinitializer, align 1
-@__compressedAssemblyData_117 = internal dso_local global [1803776 x i8] zeroinitializer, align 1
+@__compressedAssemblyData_116 = internal dso_local global [18984 x i8] zeroinitializer, align 1
+@__compressedAssemblyData_117 = internal dso_local global [1807872 x i8] zeroinitializer, align 1
 
 ; Metadata
 !llvm.module.flags = !{!0, !1, !7, !8, !9, !10}
 !0 = !{i32 1, !"wchar_size", i32 4}
 !1 = !{i32 7, !"PIC Level", i32 2}
 !llvm.ident = !{!2}
-!2 = !{!".NET for Android remotes/origin/release/9.0.1xx @ 9abff7703206541fdb83ffa80fe2c2753ad1997b"}
+!2 = !{!".NET for Android remotes/origin/release/9.0.1xx @ be1cab92326783479054e72990da08008e5be819"}
 !3 = !{!4, !4, i64 0}
 !4 = !{!"any pointer", !5, i64 0}
 !5 = !{!"omnipotent char", !6, i64 0}

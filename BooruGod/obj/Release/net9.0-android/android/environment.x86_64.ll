@@ -115,9 +115,9 @@ target triple = "x86_64-unknown-linux-android21"
 	i32 28, ; uint32_t number_of_dso_cache_entries
 	i32 756, ; uint32_t number_of_aot_cache_entries
 	i32 91, ; uint32_t number_of_shared_libraries
-	i32 u0x020002bc, ; uint32_t android_runtime_jnienv_class_token
-	i32 u0x06001a69, ; uint32_t jnienv_initialize_method_token
-	i32 u0x06001a68, ; uint32_t jnienv_registerjninatives_method_token
+	i32 u0x020002bd, ; uint32_t android_runtime_jnienv_class_token
+	i32 u0x06001a72, ; uint32_t jnienv_initialize_method_token
+	i32 u0x06001a71, ; uint32_t jnienv_registerjninatives_method_token
 	i32 0, ; uint32_t jni_remapping_replacement_type_count
 	i32 0, ; uint32_t jni_remapping_replacement_method_index_entry_count
 	i32 u0x00000000, ; uint32_t mono_components_mask
@@ -5744,7 +5744,7 @@ target triple = "x86_64-unknown-linux-android21"
 !0 = !{i32 1, !"wchar_size", i32 4}
 !1 = !{i32 7, !"PIC Level", i32 2}
 !llvm.ident = !{!2}
-!2 = !{!".NET for Android remotes/origin/release/9.0.1xx @ 9abff7703206541fdb83ffa80fe2c2753ad1997b"}
+!2 = !{!".NET for Android remotes/origin/release/9.0.1xx @ be1cab92326783479054e72990da08008e5be819"}
 !3 = !{!4, !4, i64 0}
 !4 = !{!"any pointer", !5, i64 0}
 !5 = !{!"omnipotent char", !6, i64 0}

@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("BooruGod")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0+483a7838bc63b905dc28710c89209e1a68856c69")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0+6343bbfd3f992dbfb1655c0062b52417c1c475b9")]
 [assembly: System.Reflection.AssemblyProductAttribute("BooruGod")]
 [assembly: System.Reflection.AssemblyTitleAttribute("BooruGod")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
