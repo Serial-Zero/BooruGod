@@ -1,7 +1,7 @@
 {
-  "version": "2.0.1",
-  "downloadUrl": "https://github.com/Serial-Zero/BooruGod/releases/download/v2.0.1/BooruGod.apk",
-  "releaseNotes": "Enhanced debugging with visible UI feedback - debug information now shows in popup dialogs",
+  "version": "2.0.2",
+  "downloadUrl": "https://github.com/Serial-Zero/BooruGod/releases/download/v2.0.2/BooruGod.apk",
+  "releaseNotes": "Added direct download to device - no more browser redirects! Downloads APK directly to your device and opens package installer automatically.",
   "mandatory": false,
   "minVersion": "1.0.0"
 }

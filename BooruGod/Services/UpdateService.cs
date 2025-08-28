@@ -161,11 +161,58 @@ namespace BooruGod.Services
             }
         }
         
+        public async Task<bool> DownloadUpdateToDevice(string downloadUrl)
+        {
+            try
+            {
+                System.Diagnostics.Debug.WriteLine($"[UpdateService] Starting direct download from: {downloadUrl}");
+                
+                using var client = new HttpClient();
+                client.Timeout = TimeSpan.FromMinutes(5); // 5 minute timeout for large file
+                
+                // Download the APK file
+                var apkBytes = await client.GetByteArrayAsync(downloadUrl);
+                System.Diagnostics.Debug.WriteLine($"[UpdateService] Downloaded {apkBytes.Length} bytes");
+                
+                // Get the Downloads folder path
+                var downloadsPath = Path.Combine(FileSystem.AppDataDirectory, "Downloads");
+                Directory.CreateDirectory(downloadsPath);
+                
+                // Create a unique filename with timestamp
+                var timestamp = DateTime.Now.ToString("yyyyMMdd_HHmmss");
+                var apkPath = Path.Combine(downloadsPath, $"BooruGod_v2.0.1_{timestamp}.apk");
+                
+                // Save the APK file
+                await File.WriteAllBytesAsync(apkPath, apkBytes);
+                System.Diagnostics.Debug.WriteLine($"[UpdateService] APK saved to: {apkPath}");
+                
+                // Open the file with the system's package installer
+                await Launcher.OpenAsync(new OpenFileRequest
+                {
+                    File = new ReadOnlyFile(apkPath)
+                });
+                
+                System.Diagnostics.Debug.WriteLine("[UpdateService] Package installer launched successfully");
+                return true;
+            }
+            catch (Exception ex)
+            {
+                System.Diagnostics.Debug.WriteLine($"[UpdateService] Error downloading update: {ex.Message}");
+                return false;
+            }
+        }
+        
         public async Task OpenDownloadPage(string downloadUrl)
         {
             try
             {
-                await Launcher.OpenAsync(new Uri(downloadUrl));
+                // Try direct download first
+                var downloadSuccess = await DownloadUpdateToDevice(downloadUrl);
+                if (!downloadSuccess)
+                {
+                    // Fallback to browser download
+                    await Launcher.OpenAsync(new Uri(downloadUrl));
+                }
             }
             catch (Exception ex)
             {
