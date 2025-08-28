@@ -1,14 +1,24 @@
 using System.Text.Json;
+using System.Text.Json.Serialization;
 using Microsoft.Maui.ApplicationModel;
 
 namespace BooruGod.Services
 {
     public class UpdateInfo
     {
+        [JsonPropertyName("version")]
         public string Version { get; set; } = string.Empty;
+        
+        [JsonPropertyName("downloadUrl")]
         public string DownloadUrl { get; set; } = string.Empty;
+        
+        [JsonPropertyName("releaseNotes")]
         public string ReleaseNotes { get; set; } = string.Empty;
+        
+        [JsonPropertyName("mandatory")]
         public bool Mandatory { get; set; }
+        
+        [JsonPropertyName("minVersion")]
         public string MinVersion { get; set; } = string.Empty;
     }
 

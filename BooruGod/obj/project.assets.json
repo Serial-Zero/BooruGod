@@ -29826,7 +29826,7 @@
     "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
-    "version": "2.0.0",
+    "version": "1.0.0",
     "restore": {
       "projectUniqueName": "C:\\Users\\gurag\\source\\repos\\BooruGod\\BooruGod\\BooruGod.csproj",
       "projectName": "BooruGod",
