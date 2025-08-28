@@ -1,4 +1,5 @@
 ﻿using BooruGod.Services;
+using Microsoft.Maui.ApplicationModel;
 
 namespace BooruGod
 {
@@ -9,6 +10,7 @@ namespace BooruGod
         public MainPage()
         {
             InitializeComponent();
+            SetVersionNumber();
             CheckForUpdates();
         }
 
@@ -64,6 +66,20 @@ namespace BooruGod
             SidebarOverlay.IsVisible = false;
         }
 
+        private void SetVersionNumber()
+        {
+            try
+            {
+                var version = VersionTracking.CurrentVersion;
+                VersionLabel.Text = $"v{version}";
+            }
+            catch (Exception ex)
+            {
+                System.Diagnostics.Debug.WriteLine($"[MainPage] Error setting version number: {ex.Message}");
+                VersionLabel.Text = "v1.0";
+            }
+        }
+
         private async void CheckForUpdates()
         {
             try
@@ -78,13 +94,58 @@ namespace BooruGod
                 {
                     var isMandatory = await updateService.IsUpdateMandatory(updateInfo);
                     System.Diagnostics.Debug.WriteLine($"[MainPage] Update is mandatory: {isMandatory}");
-                    await Navigation.PushAsync(new pages.UpdateDialog(updateInfo, isMandatory));
+                    
+                    if (isMandatory)
+                    {
+                        // For mandatory updates, try automatic installation
+                        await InstallUpdateAutomatically(updateInfo);
+                    }
+                    else
+                    {
+                        // For optional updates, show dialog
+                        await Navigation.PushAsync(new pages.UpdateDialog(updateInfo, isMandatory));
+                    }
                 }
             }
             catch (Exception ex)
             {
                 // Silently handle update check errors
                 System.Diagnostics.Debug.WriteLine($"[MainPage] Update check failed: {ex.Message}");
+            }
+        }
+
+        private async Task InstallUpdateAutomatically(UpdateInfo updateInfo)
+        {
+            try
+            {
+                System.Diagnostics.Debug.WriteLine("[MainPage] Attempting automatic installation...");
+                
+                // Download the APK to device storage
+                using var client = new HttpClient();
+                var apkBytes = await client.GetByteArrayAsync(updateInfo.DownloadUrl);
+                
+                // Save to downloads folder
+                var downloadsPath = Path.Combine(FileSystem.AppDataDirectory, "Downloads");
+                Directory.CreateDirectory(downloadsPath);
+                var apkPath = Path.Combine(downloadsPath, "BooruGod_Update.apk");
+                await File.WriteAllBytesAsync(apkPath, apkBytes);
+                
+                System.Diagnostics.Debug.WriteLine($"[MainPage] APK downloaded to: {apkPath}");
+                
+                // Open the file with the system's package installer
+                await Launcher.OpenAsync(new OpenFileRequest
+                {
+                    File = new ReadOnlyFile(apkPath)
+                });
+                
+                System.Diagnostics.Debug.WriteLine("[MainPage] Package installer launched");
+            }
+            catch (Exception ex)
+            {
+                System.Diagnostics.Debug.WriteLine($"[MainPage] Automatic installation failed: {ex.Message}");
+                
+                // Fallback to manual installation dialog
+                await Navigation.PushAsync(new pages.UpdateDialog(updateInfo, true));
             }
         }
     }

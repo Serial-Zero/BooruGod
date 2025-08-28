@@ -64,15 +64,23 @@
                             Clicked="OnRule34Clicked" />
                 </StackLayout>
                 
-                <Button x:Name="SettingsButton"
-                        Grid.Row="2"
-                        Text="Settings"
-                        BackgroundColor="Transparent"
-                        BorderColor="Transparent"
-                        TextColor="Black"
-                        HorizontalOptions="Start"
-                        Margin="20,0,0,20"
-                        Clicked="OnSettingsClicked" />
+                <StackLayout Grid.Row="2" 
+                             Orientation="Vertical" 
+                             Margin="20,0,0,20">
+                    <Button x:Name="SettingsButton"
+                            Text="Settings"
+                            BackgroundColor="Transparent"
+                            BorderColor="Transparent"
+                            TextColor="Black"
+                            HorizontalOptions="Start"
+                            Clicked="OnSettingsClicked" />
+                    <Label x:Name="VersionLabel"
+                           Text="v1.0"
+                           FontSize="10"
+                           TextColor="#666"
+                           HorizontalOptions="Start"
+                           Margin="0,5,0,0" />
+                </StackLayout>
             </Grid>
         </Border>
     </Grid>

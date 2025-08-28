@@ -1,4 +1,5 @@
 using Microsoft.Maui.Storage;
+using BooruGod.Services;
 
 namespace BooruGod.pages;
 
@@ -11,6 +12,7 @@ public partial class Settings : ContentPage
 	{
 		InitializeComponent();
 		LoadConfiguration();
+		SetCurrentVersion();
 	}
 
 	private void LoadConfiguration()
@@ -61,6 +63,59 @@ public partial class Settings : ContentPage
 		catch (Exception ex)
 		{
 			await DisplayAlert("Error", $"Could not open URL: {ex.Message}", "OK");
+		}
+	}
+
+	private void SetCurrentVersion()
+	{
+		try
+		{
+			var version = VersionTracking.CurrentVersion;
+			CurrentVersionLabel.Text = $"Current Version: v{version}";
+		}
+		catch (Exception ex)
+		{
+			System.Diagnostics.Debug.WriteLine($"[Settings] Error setting version: {ex.Message}");
+			CurrentVersionLabel.Text = "Current Version: v1.0";
+		}
+	}
+
+	private async void OnCheckUpdateClicked(object? sender, EventArgs e)
+	{
+		try
+		{
+			CheckUpdateButton.IsEnabled = false;
+			CheckUpdateButton.Text = "Checking...";
+			UpdateStatusLabel.Text = "Checking for updates...";
+			UpdateStatusLabel.TextColor = Colors.Blue;
+
+			var updateService = new UpdateService();
+			var updateInfo = await updateService.CheckForUpdates();
+
+			if (updateInfo != null)
+			{
+				var isMandatory = await updateService.IsUpdateMandatory(updateInfo);
+				UpdateStatusLabel.Text = $"Update available: v{updateInfo.Version}";
+				UpdateStatusLabel.TextColor = Colors.Green;
+
+				// Show update dialog
+				await Navigation.PushAsync(new UpdateDialog(updateInfo, isMandatory));
+			}
+			else
+			{
+				UpdateStatusLabel.Text = "No updates available";
+				UpdateStatusLabel.TextColor = Colors.Green;
+			}
+		}
+		catch (Exception ex)
+		{
+			UpdateStatusLabel.Text = $"Error checking updates: {ex.Message}";
+			UpdateStatusLabel.TextColor = Colors.Red;
+		}
+		finally
+		{
+			CheckUpdateButton.IsEnabled = true;
+			CheckUpdateButton.Text = "Check for Updates";
 		}
 	}
 }

@@ -59,6 +59,29 @@
                     <TapGestureRecognizer Tapped="OnApiUrlTapped" />
                 </Label.GestureRecognizers>
             </Label>
+            
+            <Border BackgroundColor="LightBlue" Padding="15">
+                <VerticalStackLayout Spacing="15">
+                    <Label 
+                        Text="App Updates"
+                        FontSize="18"
+                        FontAttributes="Bold" />
+                    
+                    <Label x:Name="CurrentVersionLabel"
+                           Text="Current Version: v1.0"
+                           FontSize="14" />
+                    
+                    <Button x:Name="CheckUpdateButton"
+                            Text="Check for Updates"
+                            HorizontalOptions="Fill"
+                            Clicked="OnCheckUpdateClicked" />
+                    
+                    <Label x:Name="UpdateStatusLabel"
+                           Text=""
+                           HorizontalOptions="Center"
+                           TextColor="Green" />
+                </VerticalStackLayout>
+            </Border>
         </VerticalStackLayout>
     </ScrollView>
 </ContentPage>
