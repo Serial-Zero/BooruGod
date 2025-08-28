@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="BooruGod.pages.Rule34"
+             Title="Rule34">
+    <Grid>
+        <Grid x:Name="NotAuthenticatedView" IsVisible="False">
+            <VerticalStackLayout HorizontalOptions="Center" VerticalOptions="Center" Spacing="20">
+                <Label 
+                    Text="API Key Required"
+                    FontSize="24"
+                    FontAttributes="Bold"
+                    HorizontalOptions="Center" />
+                <Label 
+                    Text="Please add your Rule34 API key and User ID in Settings to view content."
+                    FontSize="16"
+                    HorizontalOptions="Center"
+                    HorizontalTextAlignment="Center"
+                    Margin="20,0" />
+                <Button 
+                    Text="Go to Settings"
+                    HorizontalOptions="Center"
+                    Clicked="OnGoToSettingsClicked" />
+            </VerticalStackLayout>
+        </Grid>
+
+        <Grid x:Name="AuthenticatedView" IsVisible="False">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
+
+            <StackLayout Grid.Row="0" Orientation="Horizontal" Padding="20" Spacing="10">
+                <Entry x:Name="SearchEntry"
+                       Placeholder="Search tags..."
+                       HorizontalOptions="FillAndExpand" />
+                <Button x:Name="SearchButton"
+                        Text="Search"
+                        Clicked="OnSearchClicked" />
+            </StackLayout>
+
+            <ScrollView Grid.Row="1">
+                <CollectionView x:Name="ImagesCollectionView"
+                                ItemsSource="{Binding Posts}"
+                                SelectionMode="Single"
+                                SelectionChanged="OnImageSelected">
+                    <CollectionView.ItemsLayout>
+                        <GridItemsLayout Orientation="Vertical" Span="3" />
+                    </CollectionView.ItemsLayout>
+                    <CollectionView.ItemTemplate>
+                        <DataTemplate>
+                            <Border Margin="5" Padding="5">
+                                <Border.StrokeShape>
+                                    <RoundRectangle CornerRadius="5" />
+                                </Border.StrokeShape>
+                                <Grid>
+                                    <Image Source="{Binding SampleUrl}"
+                                           Aspect="AspectFill"
+                                           HeightRequest="150"
+                                           WidthRequest="150" />
+                                    
+                                    <Border IsVisible="{Binding IsVideo}"
+                                            BackgroundColor="#80000000"
+                                            StrokeShape="RoundRectangle 8"
+                                            HorizontalOptions="End"
+                                            VerticalOptions="End"
+                                            Margin="5">
+                                        <StackLayout Orientation="Horizontal" Spacing="5" Padding="8,4">
+                                            <Image Source="video.png"
+                                                   HeightRequest="16"
+                                                   WidthRequest="16"
+                                                   VerticalOptions="Center" />
+                                            <Label Text="{Binding FileExt, StringFormat='{0}'}"
+                                                   FontSize="12"
+                                                   TextColor="White"
+                                                   VerticalOptions="Center" />
+                                        </StackLayout>
+                                    </Border>
+                                </Grid>
+                            </Border>
+                        </DataTemplate>
+                    </CollectionView.ItemTemplate>
+                </CollectionView>
+            </ScrollView>
+
+            <StackLayout x:Name="PaginationLayout" 
+                         Grid.Row="2" 
+                         Orientation="Horizontal" 
+                         HorizontalOptions="Center" 
+                         Spacing="10" 
+                         Padding="20,10">
+                <Button x:Name="PreviousButton"
+                        Text="← Previous"
+                        IsEnabled="False"
+                        BackgroundColor="Gray"
+                        Clicked="OnPreviousPageClicked" />
+                
+                <Label x:Name="PageInfoLabel"
+                       Text="Page 1 (1-50 of 0)"
+                       VerticalOptions="Center"
+                       HorizontalOptions="Center"
+                       FontSize="14" />
+                
+                <Button x:Name="NextButton"
+                        Text="Next →"
+                        IsEnabled="False"
+                        BackgroundColor="Gray"
+                        Clicked="OnNextPageClicked" />
+            </StackLayout>
+
+            <ActivityIndicator x:Name="LoadingIndicator"
+                              Grid.Row="1"
+                              IsRunning="False"
+                              IsVisible="False"
+                              HorizontalOptions="Center"
+                              VerticalOptions="Center" />
+        </Grid>
+    </Grid>
+</ContentPage>

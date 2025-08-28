@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="BooruGod.pages.UpdateDialog"
+             Title="Update Available"
+             BackgroundColor="#F5F5F5">
+
+    <Grid Padding="20">
+        <StackLayout Spacing="20" VerticalOptions="Center">
+            
+            <!-- Update Icon -->
+            <StackLayout HorizontalOptions="Center" Spacing="10">
+                <Label Text="🔄"
+                       FontSize="48"
+                       HorizontalOptions="Center" />
+                <Label Text="Update Available"
+                       FontSize="24"
+                       FontAttributes="Bold"
+                       HorizontalOptions="Center" />
+            </StackLayout>
+            
+            <!-- Version Info -->
+            <Border BackgroundColor="White" 
+                    Stroke="Transparent" 
+                    StrokeThickness="0"
+                    StrokeShape="RoundRectangle 12"
+                    Padding="20">
+                <StackLayout Spacing="15">
+                    <Label x:Name="VersionLabel"
+                           Text="New version available"
+                           FontSize="18"
+                           FontAttributes="Bold"
+                           HorizontalOptions="Center" />
+                    
+                    <Label x:Name="ReleaseNotesLabel"
+                           Text="Release notes will appear here"
+                           FontSize="14"
+                           TextColor="#666"
+                           HorizontalOptions="Center" />
+                </StackLayout>
+            </Border>
+            
+            <!-- Action Buttons -->
+            <StackLayout Spacing="10">
+                <Button x:Name="DownloadButton"
+                        Text="📥 Download Update"
+                        FontSize="16"
+                        BackgroundColor="#2196F3"
+                        TextColor="White"
+                        Padding="20,12"
+                        Clicked="OnDownloadClicked" />
+                
+                <Button x:Name="LaterButton"
+                        Text="⏰ Later"
+                        FontSize="16"
+                        BackgroundColor="Transparent"
+                        TextColor="#666"
+                        Padding="20,12"
+                        Clicked="OnLaterClicked" />
+            </StackLayout>
+            
+            <!-- Mandatory Update Notice -->
+            <Border x:Name="MandatoryNotice"
+                    IsVisible="False"
+                    BackgroundColor="#FFF3CD"
+                    Stroke="#FFEAA7"
+                    StrokeThickness="1"
+                    StrokeShape="RoundRectangle 8"
+                    Padding="15">
+                <Label Text="⚠️ This is a mandatory update. The app may not function properly without updating."
+                       FontSize="12"
+                       TextColor="#856404"
+                       HorizontalOptions="Center" />
+            </Border>
+        </StackLayout>
+    </Grid>
+</ContentPage>
